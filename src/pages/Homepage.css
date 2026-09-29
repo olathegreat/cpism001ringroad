@@ -1,0 +1,41 @@
+.counter-app{
+    min-height: 100vh;
+    background: #333333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.count{
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+
+.button-wrapper{
+    display: flex;
+    gap: 20px;
+}
+.button-wrapper button{
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.6s ease;
+    font-family: "poppins", sans-serif;
+    cursor: pointer;
+}
+.button-wrapper button:hover{
+    opacity: .7;
+}
+.button-wrapper .increase-btn{
+    background-color: green;
+}
+
+.button-wrapper .decrease-btn{
+    background-color: red;
+}
+.button-wrapper .reset-btn{
+    background-color: yellow;
+}
