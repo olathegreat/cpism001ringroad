@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { MdOutlineCancel } from "react-icons/md";
 import "./ClassThree.css"
+import NavComponent from '../components/NavComponent';
 
 
 const ClassThree = () => {
@@ -9,6 +10,7 @@ const ClassThree = () => {
     const [isVideoDisplay, setIsVideoDisplay] = useState(false);
   return (
     <div  className='class-three'>
+        <NavComponent text="Welcome Jackson"/>
           
           <nav>
               <h1>CPISMCLASS</h1>
@@ -67,7 +69,6 @@ const ClassThree = () => {
 
 
           {
-
              isVideoDisplay  ? (
                          <section className='watch-video'>
             
@@ -84,14 +85,11 @@ const ClassThree = () => {
           </section>
              ) : ""
 
-
           }
 
       
 
         
-
-
 
 
         

@@ -1,0 +1,9 @@
+.cards-wrapper{
+    display: flex;
+    gap: 20px;
+}
+.testimonial-wrapper{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}

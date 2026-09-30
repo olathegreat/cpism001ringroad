@@ -1,0 +1,22 @@
+.testimonial-card{
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: lightblue;
+    border-radius: 8px;
+    padding: 10px;
+}
+.testimonial-card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.ratings{
+    display: flex;
+    gap: 10px;
+}
+.reviewer-info{
+    display: flex;
+    gap: 10px;
+}

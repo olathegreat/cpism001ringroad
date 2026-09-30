@@ -1,0 +1,16 @@
+.user-card{
+    width: 300px;
+    background: lightsalmon;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.123);
+    padding: 10px;
+}
+.user-card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.user-card h4{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
