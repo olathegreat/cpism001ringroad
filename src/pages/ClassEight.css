@@ -1,0 +1,24 @@
+.table-header{
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    position: sticky;
+}
+
+.table-header span{
+    flex: 1;
+}
+  .exchange-wrapper{
+    width: 70%;
+  }
+
+.class-eight{
+    display: flex;
+    justify-content: center;
+    padding:60px 100px ;
+    position: relative;
+}

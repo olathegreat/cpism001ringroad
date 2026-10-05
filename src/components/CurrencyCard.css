@@ -1,0 +1,11 @@
+.currency-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 30px;
+}
+.currency-card:nth-child(even) {background-color: #f2f2f2;}
+.currency-card span{
+    flex: 1;
+}
