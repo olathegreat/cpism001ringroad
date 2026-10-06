@@ -7,6 +7,7 @@ import ClassThree from './pages/ClassThree'
 import Error404 from './pages/Error404'
 import ClassFive from './pages/ClassFive'
 import ClassEight from './pages/ClassEight'
+import ClassNine from './pages/ClassNine'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/classthree' element={<ClassThree/>}/>
       <Route path='/classfive' element={<ClassFive/>}/>
       <Route path='/classeight' element={<ClassEight/>}/>
+      <Route path="/classnine" element={<ClassNine/>}/>
       <Route path='*' element={<Error404/>}/>
 
     </Routes>

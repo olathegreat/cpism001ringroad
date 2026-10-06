@@ -1,0 +1,35 @@
+.products-wrapper{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    padding: 60px 20px;
+    flex: 4;
+}
+.class-nine{
+    display: flex;
+    gap: 20px;
+}
+.class-nine .categories{
+    background: lightgray;
+    flex: 1;
+    
+    padding: 60px 20px;
+}
+.category-item{
+    background: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding:10px ;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+
+}
+.category-item:hover{
+    opacity: .8;
+}

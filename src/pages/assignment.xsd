@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    
+    <xs:element name="SpaceAgency">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="Agency">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <xs:element name="AgencyName" type="xs:string"/>
+
+                            <xs:element name="Mission">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <xs:element name="Target" type="xs:string"/>
+                                        <xs:element name="Date" type="xs:string"/>
+                                        <xs:element name="Objectives" type="xs:string"/>
+
+                                        <xs:element name="Members">
+                                            <xs:complexType>
+                                                <xs:sequence>
+
+                                                    <xs:element name="Member" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Name" type="xs:string"/>
+                                                                <xs:element name="Role" type="xs:string"/>
+                                                                <xs:element name="Experience" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+
+                                   
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+
+                                </xs:complexType>
+                            </xs:element>
+
+                          
+                            <xs:element name="SpaceCraft">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Name" type="xs:string"/>
+                                        <xs:element name="Class" type="xs:string"/>
+                                        <xs:element name="Fuel" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
