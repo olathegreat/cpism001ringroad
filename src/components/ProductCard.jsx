@@ -1,13 +1,18 @@
 import React from "react";
 import "./ProductCard.css";
 import { FcRating } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = (props) => {
+    const navigate = useNavigate();
 
     const ratingValue = Number(props.ratings)
  
   return (
-    <div className="product-card">
+    <div 
+    onClick={()=>navigate(`/classnine/${props.id}`)}
+    
+    className="product-card">
       <div className="product-top">
         <img
           className="product-img"

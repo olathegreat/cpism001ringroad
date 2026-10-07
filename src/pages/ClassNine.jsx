@@ -60,7 +60,24 @@ const ClassNine = () => {
 
         fetchProductsByCategory();
 
-    },[selectedCategory])
+    },[selectedCategory]);
+
+    const submitFunction = (e)=>{
+        e.preventDefault();
+
+        async function getSearchProduct(){
+            const res = await fetch(`https://dummyjson.com/products/search?q=${searchValue}`);
+
+            const data = await res.json();
+            console.log(data);
+
+            setArrayOfProduct(data.products);
+        }
+
+        getSearchProduct();
+
+    }
+    const [searchValue, setSearchValue] = useState("");
 
   return (
     <div className="class-nine">
@@ -72,13 +89,30 @@ const ClassNine = () => {
         ))}
         <div className="category-item">Men shoe</div>
       </div>
-      <div className="products-wrapper">
+      <div className="main-right">
+        <div className="searchbar">
+            <form onSubmit={submitFunction}>
+                <input
+                 type="text" 
+                 placeholder="search your product"
+                 value={searchValue}
+                 onChange={(e)=>setSearchValue(e.target.value)}
+                 
+                 />
+                <button>Search</button>
+            </form>
+
+        </div>
+        <div className="products-wrapper">
+
+        
         {arrayOfProduct?.map((item) => (
           <ProductCard
             img={item.thumbnail}
             stock={item.stock}
             name={item.title}
             ratings={item.rating}
+            id={item.id}
             discountPrice={(
               (item.price * (100 - item.discountPercentage)) /
               100
@@ -87,6 +121,7 @@ const ClassNine = () => {
             discount={item.discountPercentage}
           />
         ))}
+        </div>
       </div>
     </div>
   );

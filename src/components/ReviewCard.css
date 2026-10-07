@@ -1,0 +1,38 @@
+.review-card{
+    background: lightblue;
+    padding: 20px;
+    border: 10px;
+    max-width: 200px;
+    height: 200px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+}
+.reviewer-info{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+   
+
+}
+
+.reviewer-info .dummy-img{
+    width: 50px;
+    height: 45px;
+    background-color: orangered;
+    color: navy;
+    border-radius: 50%;
+     display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+.reviewer-infoh3{
+    font-size: 14px;
+    font-weight: 500;
+}
+.review-card .ratings{
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+}
+.review-card .comment{
+    font-size: 12px;
+}
