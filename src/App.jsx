@@ -9,6 +9,8 @@ import ClassFive from './pages/ClassFive'
 import ClassEight from './pages/ClassEight'
 import ClassNine from './pages/ClassNine'
 import ProductDescription from './pages/ProductDescription'
+import Books from './pages/Books'
+import BookDetailsPage from './pages/BookDetailsPage'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Route path='/classeight' element={<ClassEight/>}/>
       <Route path="/classnine" element={<ClassNine/>}/>
       <Route path="/classnine/:id" element={<ProductDescription/>}/>
+      <Route path='/naijabooks' element={<Books/>}/>
+      <Route path='/naijabooks/:id' element={<BookDetailsPage/>}/>
       <Route path='*' element={<Error404/>}/>
 
     </Routes>
