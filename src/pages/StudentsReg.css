@@ -1,0 +1,52 @@
+.students-reg{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px;
+    justify-content: center;
+
+}
+
+.students-reg form{
+    background: lightcoral;
+    width: 500px;
+    padding: 40px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.students-reg form button{
+    background: navy;
+    color: white;
+}
+
+.students-reg .input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.students-reg input, .students-reg select{
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+.students-reg textarea{
+    
+    border: none;
+    padding: 10px;
+    resize: vertical;
+
+}
+.students-reg form button{
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.students-reg form button:hover{
+    opacity: .7;
+}

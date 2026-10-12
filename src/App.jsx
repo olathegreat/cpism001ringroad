@@ -11,6 +11,7 @@ import ClassNine from './pages/ClassNine'
 import ProductDescription from './pages/ProductDescription'
 import Books from './pages/Books'
 import BookDetailsPage from './pages/BookDetailsPage'
+import StudentsReg from './pages/StudentsReg'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/classnine/:id" element={<ProductDescription/>}/>
       <Route path='/naijabooks' element={<Books/>}/>
       <Route path='/naijabooks/:id' element={<BookDetailsPage/>}/>
+      <Route path='/create-students' element={<StudentsReg/>}/>
       <Route path='*' element={<Error404/>}/>
 
     </Routes>
