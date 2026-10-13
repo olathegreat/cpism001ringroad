@@ -50,3 +50,9 @@
 .students-reg form button:hover{
     opacity: .7;
 }
+
+.loader-img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}

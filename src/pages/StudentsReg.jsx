@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../assets/loader.gif";
 import "./StudentsReg.css";
+import { Bounce, toast } from "react-toastify";
 
 const StudentsReg = () => {
   const [studentInfo, setStudentInfo] = useState({
@@ -10,7 +12,7 @@ const StudentsReg = () => {
     phoneNumber: "",
     dateOfBirth: "",
     gender: "",
-    nationality: "Afghanistan",
+    nationality: "",
     stateOfOrigin: "",
     program: "",
     profileImg: "",
@@ -60,18 +62,79 @@ const StudentsReg = () => {
     getAllStates();
   }, [studentInfo.nationality]);
 
-  const formSubmit = async (e)=>{
-    e.preventDefault();
-    console.log(studentInfo)
+  const [showLoader, setShowLoader] = useState(false);
 
-    const res = await fetch("https://6accafd8b406cb8ec0c64fdd.mockapi.io/students", {
-        method:"POST",
-        body: JSON.stringify(studentInfo)
+  const formSubmit = async (e) => {
+      e.preventDefault();
+    try{
+        
+    setShowLoader(true);
+    console.log(studentInfo);
+     const res = await fetch(
+      "https://6accafd8b406cb8ec0c64fdd.mockapi.io/students",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(studentInfo),
+      },
+    );
+
+    console.log("successful");
+    setShowLoader(false);
+    toast("registration is successful", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
     });
 
-    console.log("successful")
+    setStudentInfo({
+         surname: "",
+    firstname: "",
+    middlename: "",
+    email: "",
+    phoneNumber: "",
+    dateOfBirth: "",
+    gender: "",
+    nationality: "",
+    stateOfOrigin: "",
+    program: "",
+    profileImg: "",
+    address: "",
+    bio: "",
+    })
 
-  }
+
+    }catch(err){
+        console.log(err);
+        toast("registration is unsuccessful, try again", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+    setShowLoader(false);
+
+
+    }
+   
+
+
+
+   
+  };
 
   return (
     <div className="students-reg">
@@ -171,9 +234,10 @@ const StudentsReg = () => {
               setStudentInfo({ ...studentInfo, gender: e.target.value })
             }
           >
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
+            <option value="">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
           </select>
 
           <div className="error"></div>
@@ -188,8 +252,9 @@ const StudentsReg = () => {
               setStudentInfo({ ...studentInfo, nationality: e.target.value })
             }
           >
+            <option value="">Select Your Country</option>
             {countries.map((item) => (
-              <option>{item.country}</option>
+              <option value={item.country}>{item.country}</option>
             ))}
           </select>
 
@@ -205,8 +270,9 @@ const StudentsReg = () => {
               setStudentInfo({ ...studentInfo, stateOfOrigin: e.target.value })
             }
           >
+            <option value="">Select State</option>
             {studentStates.map((item) => (
-              <option>{item.name}</option>
+              <option value={item.name}>{item.name}</option>
             ))}
           </select>
 
@@ -222,16 +288,16 @@ const StudentsReg = () => {
               setStudentInfo({ ...studentInfo, program: e.target.value })
             }
           >
-           <option>Cybersecurity</option>
-           <option>Data Science</option>
-           <option>Ethical hacking</option>
-           <option>Software dev</option>
-           <option>Design</option>
+            <option value="">Select your program</option>
+            <option >Cybersecurity</option>
+            <option>Data Science</option>
+            <option>Ethical hacking</option>
+            <option>Software dev</option>
+            <option>Design</option>
           </select>
 
           <div className="error"></div>
         </div>
-
 
         <div className="input-group">
           <label>Profile Image</label>
@@ -246,12 +312,11 @@ const StudentsReg = () => {
           />
           <div className="error"></div>
         </div>
-         <div className="input-group">
+        <div className="input-group">
           <label>Address</label>
           <input
             type="text"
             placeholder="Type in your address"
-            
             value={studentInfo.address}
             onChange={(e) =>
               setStudentInfo({ ...studentInfo, address: e.target.value })
@@ -260,23 +325,28 @@ const StudentsReg = () => {
           <div className="error"></div>
         </div>
 
-         <div className="input-group">
+        <div className="input-group">
           <label>Your Bio:</label>
 
           <textarea
-          
             placeholder="Say something about you"
             required
             value={studentInfo.bio}
             onChange={(e) =>
-              setStudentInfo({ ...studentInfo, bio: e.target.value })}
-          
+              setStudentInfo({ ...studentInfo, bio: e.target.value })
+            }
           />
-        
+
           <div className="error"></div>
         </div>
 
-        <button>Register Students</button>
+        <button>
+          {showLoader === true ? (
+            <img className="loader-img" src={Loader} alt="loader" />
+          ) : (
+            "Register Students"
+          )}
+        </button>
       </form>
     </div>
   );
