@@ -1,0 +1,18 @@
+.student-detail{
+    padding: 40px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.student-detail img{
+    max-width: 500px;
+    height: 400px;
+    object-fit: cover;
+}
+.student-detail button{
+
+    width: fit-content;
+    padding: 10px;
+}

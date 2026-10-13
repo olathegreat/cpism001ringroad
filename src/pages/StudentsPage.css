@@ -1,0 +1,15 @@
+.students-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 100px;
+}
+.students-wrapper{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin-top: 40px;
+}

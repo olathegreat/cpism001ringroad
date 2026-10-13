@@ -13,6 +13,8 @@ import Books from './pages/Books'
 import BookDetailsPage from './pages/BookDetailsPage'
 import StudentsReg from './pages/StudentsReg'
 import { ToastContainer } from 'react-toastify'
+import StudentsPage from './pages/StudentsPage'
+import StudentDetailsPage from './pages/StudentDetailsPage'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
       <Route path='/naijabooks' element={<Books/>}/>
       <Route path='/naijabooks/:id' element={<BookDetailsPage/>}/>
       <Route path='/create-students' element={<StudentsReg/>}/>
+      <Route path='/students' element={<StudentsPage/>}/>
+      <Route path='/students/:id' element={<StudentDetailsPage/>}/>
       <Route path='*' element={<Error404/>}/>
 
     </Routes>
