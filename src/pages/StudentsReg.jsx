@@ -129,11 +129,7 @@ const StudentsReg = () => {
 
 
     }
-   
-
-
-
-   
+      
   };
 
   return (

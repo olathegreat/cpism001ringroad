@@ -4,11 +4,13 @@ import StudentCard from "../components/StudentCard";
 import { Bounce, toast } from "react-toastify";
 
 import LoaderImg from "../assets/loader.gif";
+import { useNavigate } from "react-router-dom";
 
 const StudentsPage = () => {
   const [studentsArray, setStudentsArray] = useState([]);
 
   const [showLoader, setShowLoader] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getAllStudents() {
@@ -76,6 +78,8 @@ const StudentsPage = () => {
           ))}
         </div>
       )}
+
+      <button onClick={()=>navigate("/create-students")}>Register student</button>
     </div>
   );
 };
