@@ -15,6 +15,7 @@ import StudentsReg from './pages/StudentsReg'
 import { ToastContainer } from 'react-toastify'
 import StudentsPage from './pages/StudentsPage'
 import StudentDetailsPage from './pages/StudentDetailsPage'
+import NewForm from './pages/NewForm'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path='/create-students' element={<StudentsReg/>}/>
       <Route path='/students' element={<StudentsPage/>}/>
       <Route path='/students/:id' element={<StudentDetailsPage/>}/>
+      <Route path='/users-create' element={<NewForm/>}/>
       <Route path='*' element={<Error404/>}/>
 
     </Routes>
